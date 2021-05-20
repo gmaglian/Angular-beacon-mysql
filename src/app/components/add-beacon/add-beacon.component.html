@@ -1,0 +1,98 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+            <label for="uid">UID</label>
+            <input
+            type="text"
+            class="form-control"
+            id="uid"
+            required
+            [(ngModel)]="beacon.UID"
+            name="uid"
+            #uid_ref/>
+            </div>
+  
+            <div class="form-group">
+            <label for="major">Major</label>
+            <input
+                type="text"
+                class="form-control"
+                id="major"
+                required
+                [(ngModel)]="beacon.MAJOR"
+                name="major"
+                maxlength="45"
+            #major_ref/>
+            </div>
+
+            <div class="form-group">
+                <label for="minor">Minor</label>
+                <input
+                type="text"
+                class="form-control"
+                id="minor"
+                required
+                [(ngModel)]="beacon.MINOR"
+                name="minor"
+                maxlength="45"
+                #minor_ref/>
+            </div>
+
+            <div class="form-group">
+                <label for="url">Url</label>
+                <input
+                type="text"
+                class="form-control"
+                id="url"
+                [(ngModel)]="beacon.URL"
+                name="url"
+                maxlength="45"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="descrizione">Descrizione</label>
+                <input
+                type="text" 
+                class="form-control"
+                id="descrizione"
+                [(ngModel)]="beacon.Descrizione"
+                name="descrizione"
+                maxlength="45"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data di assegnazione</label>
+                <input
+                type="date"
+                class="form-control"
+                id="data"
+                [(ngModel)]="beacon.DataAssegnazione"
+                name="data"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="punto_di_interesse">Riferimento al punto di interesse</label>
+                <input
+                type="text"
+                class="form-control"
+                id="punto_di_interesse"
+                [(ngModel)]="beacon.PuntiDiInteresse_idPuntiDiInteresse"
+                name="punto_di_interesse"
+                />
+            </div>
+
+            <div style="text-align:center">
+                <button (click)="saveBeacon(uid_ref.value,major_ref.value,minor_ref.value)">
+            <i class="fas fa-edit"></i> Aggiungi beacon
+            </button>
+        </div>
+    </div>
+      <div *ngIf="submitted">
+        <h4>Il beacon è stato inserito con successo!</h4>
+      </div>
+    </div>
+  </div>

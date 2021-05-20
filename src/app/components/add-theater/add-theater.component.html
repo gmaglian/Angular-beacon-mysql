@@ -1,0 +1,51 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+            <label for="nome_teatro">Nome del teatro</label>
+            <input
+            type="text"
+            class="form-control"
+            id="nome_teatro"
+            required
+            [(ngModel)]="theater.NomeTeatro"
+            name="nome_teatro"
+            maxlength="45"
+            #nome_teatro_ref/>
+            </div>
+  
+            <div class="form-group">
+            <label for="descrizione">Descrizione</label>
+            <input
+                type="text"
+                class="form-control"
+                id="descrizione"
+                [(ngModel)]="theater.Descrizione"
+                name="descrizione"
+                maxlength="45"
+            />
+            </div>
+
+            <div class="form-group">
+                <label for="localita_idlocalita">Riferimento alla località</label>
+                <input
+                type="text"
+                class="form-control"
+                id="localita_idlocalita"
+                required
+                [(ngModel)]="theater.Localita_idLocalita"
+                name="localita_idlocalita"
+                #localita_idlocalita_ref/>
+            </div>
+
+            <div style="text-align:center">
+                <button (click)="saveTheater( nome_teatro_ref.value,localita_idlocalita_ref.value)">
+            <i class="fas fa-edit"></i> Aggiungi località
+            </button>
+        </div>
+    </div>
+      <div *ngIf="submitted">
+        <h4>La località è stata inserita con successo!</h4>
+      </div>
+    </div>
+  </div>

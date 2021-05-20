@@ -1,0 +1,73 @@
+<div class="list row">    
+  <div class="col-md-6">
+    <h4>Riepilogo beacon</h4>
+     
+    
+    <table class="table table-sm">
+      <tr>
+        <th style="width: 15%">Id</th>
+        <th style="width: 35%">Uid</th>
+        <th style="width: 25%">Major</th>
+        <th style="width: 25%">Minor</th>
+        <th style="width: 55%">URL</th>
+        <th style="width: 55%">Descrizione</th>
+        <th style="width: 25%">Data Assegnazione</th>
+        <th style="width: 15%">Riferimento punto di interesse</th>
+        <th colspan="2">Azioni</th> 
+      </tr>
+      <tr *ngFor="let beacon of beacons; let i = index">
+        <td>
+          {{ beacon.idBeacon }} 
+        </td>
+        <td> 
+          {{ beacon.UID }}
+        </td>
+        <td> 
+          {{ beacon.MAJOR }}
+        </td>
+        <td> 
+          {{ beacon.MINOR }}
+        </td>
+        <td> 
+          {{ beacon.URL }}
+        </td>
+        <td> 
+          {{ beacon.Descrizione }}
+        </td>
+        <td> 
+          {{ beacon.DataAssegnazione }}
+        </td>
+        <td> 
+          {{ beacon.PuntiDiInteresse_idPuntiDiInteresse }}
+        </td>
+        <td> 
+          
+          <button type="button" class="btn btn-outline-primary"(click)="edit(beacon)">Modifica</button>
+        </td>
+        <td> 
+          
+          <button type="button" class="btn btn-outline-danger" (click)="deletebyId(beacon)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+        
+  
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBeacons()">
+      Rimuovi tutti!
+    </button>
+  </div>
+
+
+ <div class="modal-body">
+      <app-beacon-edit [beacon]="beacon" *ngIf="activateEditBeacon">
+   
+      </app-beacon-edit> 
+
+      
+    </div> 
+
+ <button  class="btn btn-outline-success" *ngIf="activateEditBeacon" (click)=close()>Aggiorna</button>
+
+</div>

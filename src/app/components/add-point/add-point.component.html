@@ -1,0 +1,54 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+            <label for="nome">Nome</label>
+            <input
+            type="text"
+            class="form-control"
+            id="nome"
+            required
+            [(ngModel)]="point.NomePunto"
+            name="nome"
+            maxlength="45"
+            #nome_ref/>
+            </div>
+  
+            <div class="form-group">
+            <label for="descrizione">Descrizione</label>
+            <input
+                type="text"
+                class="form-control"
+                id="descrizione"
+                [(ngModel)]="point.DescrizionePunto"
+                name="descrizione"
+                maxlength="200"
+            />
+            </div>
+
+            <div class="form-group">
+                <label for="aree">Riferimento area</label>
+                <input
+                type="text"
+                class="form-control"
+                id="aree"
+                required
+                [(ngModel)]="point.Aree_idAree"
+                name="aree"
+                #aree_ref/>
+            </div>
+
+
+           
+
+            <div style="text-align:center">
+                <button (click)="savePoint(nome_ref.value,aree_ref.value)">
+            <i class="fas fa-edit"></i> Aggiungi punto di interesse
+            </button>
+        </div>
+    </div>
+      <div *ngIf="submitted">
+        <h4>Il punto di interesse è stato inserito con successo!</h4>
+      </div>
+    </div>
+  </div>

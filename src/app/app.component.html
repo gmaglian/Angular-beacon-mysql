@@ -1,0 +1,47 @@
+
+  <h3 class="d-flex justify-content-center"> PROGETTO CANTICO </h3>
+  <h5 class="d-flex justify-content-center"> Database beacon</h5>
+ 
+  <nav class="navbar navbar-expand  navbar-light navbar-dark bg-dark" >
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    
+      <ul class="navbar-nav mr-auto">
+       
+        <li class="nav-item active">
+          <a class="nav-link"   style="font-size:150%" >Menù <span class="sr-only">(current)</span></a>
+        </li>
+
+      
+        <li ngbDropdown  class="nav-item dropdown" >
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"  style="font-size:120%" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Database presenti
+          </a>
+          <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="beacon">Beacon</a>
+            <a class="dropdown-item" routerLink="locality">Località</a>
+            <a class="dropdown-item" routerLink="theater">Teatro</a>
+            <a class="dropdown-item" routerLink="area">Area</a>
+            <a class="dropdown-item" routerLink="point">Punti di interesse</a>
+          </div>
+        </li>
+
+
+        <li ngbDropdown  class="nav-item dropdown" >
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"  style="font-size:120%" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Aggiungi
+          </a>
+          <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="add_beacon">Beacon</a>
+            <a class="dropdown-item" routerLink="add_locality">Località</a>
+            <a class="dropdown-item" routerLink="add_theater">Teatro</a>
+            <a class="dropdown-item" routerLink="add_area">Area</a>
+            <a class="dropdown-item" routerLink="add_point">Punti di interesse</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>

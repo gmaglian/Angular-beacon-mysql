@@ -1,0 +1,18 @@
+<div class="form-froup row">
+
+    <label class="col-sm-2 col-form-label"> Id della località</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="currentLocality.idLocalita"
+        placeholder="Inserisci il numero id della località che vuoi modificare" readonly>
+    </div>
+    
+    
+    <label class="col-sm-2 col-form-label"> Nome località</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="currentLocality.NomeLocalita"
+        placeholder="Inserisci il nome della località che vuoi modificare" maxlength="45">
+    </div>
+
+    <button (click)="UpdateLocality()" class="btn btn-outline-primary">Modifica</button>
+    </div>
+    
