@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Theater } from '../models/theater.model';
+import { Beacon } from '../models/beacon.model';
 
-//const baseUrl = 'http://localhost:8090/api/teatri';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/teatri';
+
+//const baseUrl = 'http://localhost:8090/api/beacon/context';
+const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/beacon/context';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TheaterService {
+export class ContextService {
+
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Theater[]> {
-    return this.http.get<Theater[]>(baseUrl);
+  getAll(): Observable<any> {
+    return this.http.get(`${baseUrl}/7`);
   }
 
-  get(id: any): Observable<Theater> {
+  get(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 

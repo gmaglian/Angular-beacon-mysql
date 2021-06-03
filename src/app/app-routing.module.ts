@@ -11,6 +11,7 @@ import { AreasListComponent } from './components/areas-list/areas-list.component
 import { AddAreaComponent } from './components/add-area/add-area.component'
 import { PointsListComponent } from './components/points-list/points-list.component'
 import { AddPointComponent } from './components/add-point/add-point.component'
+import { ContextListComponent } from './components/context-list/context-list.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'beacon', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'area', component: AreasListComponent },
   { path: 'add_area', component: AddAreaComponent },
   { path: 'point', component:PointsListComponent },
-  { path: 'add_point', component:AddPointComponent}
+  { path: 'add_point', component:AddPointComponent},
+  {path: 'context', component:ContextListComponent}
 
 ];
 

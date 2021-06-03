@@ -19,10 +19,12 @@ import { AreaEditComponent } from './components/area-edit/area-edit.component';
 import { AddPointComponent } from './components/add-point/add-point.component';
 import { PointsListComponent } from './components/points-list/points-list.component';
 import { PointEditComponent } from './components/point-edit/point-edit.component';
+import { ContextListComponent } from './components/context-list/context-list.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AreaEditComponent,
     AddPointComponent,
     PointsListComponent,
-    PointEditComponent
+    PointEditComponent,
+    ContextListComponent
   ],
   imports: [
     BrowserModule,
