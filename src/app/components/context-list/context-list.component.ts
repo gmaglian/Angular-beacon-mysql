@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContextService } from 'src/app/services/context.service';
+import { BeaconService } from 'src/app/services/beacon.service';
 
 @Component({
   selector: 'app-context-list',
@@ -7,15 +8,26 @@ import { ContextService } from 'src/app/services/context.service';
   styleUrls: ['./context-list.component.css']
 })
 export class ContextListComponent implements OnInit {
+  array = [];
   stringJson : any;
   stringObject: any;
   id:any;
   submitted=false;
 
-  constructor(private contextservice:ContextService) { }
+  constructor(private contextservice:ContextService, private beaconservice:BeaconService) { }
 
   ngOnInit(): void {
-    //this.retrieveContext();
+   
+    this.beaconservice.getAll()
+    .subscribe(
+      data => {
+        this.array = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
+
   }
 
   

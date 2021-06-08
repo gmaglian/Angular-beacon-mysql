@@ -1,9 +1,17 @@
 <div>
     <div class="submit-form">
-        <div class="form-group">
+         <div class="form-group">
             <h4>Inserisci Id del contesto</h4>
-            <input type="text" class="form-control" [(ngModel)]="id" maxlength="10" />
-        </div>
+<!--            <input type="text" class="form-control" [(ngModel)]="id" maxlength="10" />
+        </div> -->
+
+        <select class="form-select" aria-label="select"  [(ngModel)]="id">
+            <option *ngFor="let a of array" value='{{a.idBeacon}}'>
+                {{ a.idBeacon }}
+                - UID: {{ a.UID }} MAJOR: {{ a.MAJOR }} MINOR: {{ a.MINOR }}
+            </option>  
+        </select> 
+      
         <div style="text-align:center">
             <button (click)="showContext()">
                 <i class="fas fa-edit"></i> Mostra Contesto
@@ -14,19 +22,19 @@
 
 <div *ngIf="submitted">
     <div class="list row">
-        <div class="col-md-6">
+        <div class="col">
             <h4>Riepilogo Contesto</h4>
 
             <table class="table table-sm">
                 <tr>
-                    <th style="width: 15%">Id</th>
-                    <th style="width: 25%">Major</th>
-                    <th style="width: 25%">Minor</th>
-                    <th style="width: 55%">Nome punto</th>
-                    <th style="width: 55%">Descrizione Punto</th>
-                    <th style="width: 25%">Nome Area</th>
-                    <th style="width: 25%">Nome Teatro</th>
-                    <th style="width: 25%">Nome Località</th>
+                    <th style="width: 12%">Id</th>
+                    <th style="width: 12%">Major</th>
+                    <th style="width: 12%">Minor</th>
+                    <th style="width: 12%">Nome punto</th>
+                    <th style="width: 12%">Descrizione Punto</th>
+                    <th style="width: 12%">Nome Area</th>
+                    <th style="width: 12%">Nome Teatro</th>
+                    <th style="width: 12%">Nome Località</th>
                 </tr>
                 <tr *ngFor="let context of stringObject; let i = index">
                     <td>
