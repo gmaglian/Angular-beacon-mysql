@@ -22,10 +22,16 @@
     
 
     <label class="col-sm-2 col-form-label"> Riferimento alla località</label>
-    <div class="col-sm-10">
+<!--     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="currentTheater.Localita_idLocalita"
         placeholder="Inserisci il riferimento alla località del teatro che vuoi modificare">
-    </div>
+    </div> -->
+    <select class="form-select" aria-label="select"  [(ngModel)]="currentTheater.Localita_idLocalita">
+        <option *ngFor="let a of array" value='{{a.idLocalita}}' >
+          {{ a.NomeLocalita }}  
+        </option>  
+      </select> 
+
 
     <button (click)="UpdateTheater()" class="btn btn-outline-primary">Modifica</button>
     </div>

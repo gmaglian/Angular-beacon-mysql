@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Theater } from 'src/app/models/theater.model';
 import { TheaterService } from 'src/app/services/theater.service';
+import { LocalityService } from 'src/app/services/locality.service';
 
 @Component({
   selector: 'app-theater-edit',
@@ -8,6 +9,7 @@ import { TheaterService } from 'src/app/services/theater.service';
   styleUrls: ['./theater-edit.component.css']
 })
 export class TheaterEditComponent implements OnInit {
+  array = [];
   currentTheater: Theater={
     idTeatro:'',
     NomeTeatro:'',
@@ -15,7 +17,7 @@ export class TheaterEditComponent implements OnInit {
     Localita_idLocalita:''
 
  };
-  constructor(private service:TheaterService) { }
+  constructor(private service:TheaterService, private localityservice:LocalityService) { }
 
   @Input() theater:any;
 
@@ -24,6 +26,16 @@ export class TheaterEditComponent implements OnInit {
     this.currentTheater.NomeTeatro=this.theater.NomeTeatro;
     this.currentTheater.Descrizione=this.theater.Descrizione;
     this.currentTheater.Localita_idLocalita=this.theater.Localita_idLocalita;
+
+    this.localityservice.getAll()
+    .subscribe(
+      data => {
+        this.array = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
 
   }
 

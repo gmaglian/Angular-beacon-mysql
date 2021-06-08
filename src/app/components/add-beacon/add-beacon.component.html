@@ -47,7 +47,7 @@
                 id="url"
                 [(ngModel)]="beacon.URL"
                 name="url"
-                maxlength="45"
+                maxlength="125"
                 />
             </div>
 
@@ -75,14 +75,20 @@
             </div>
 
             <div class="form-group">
-                <label for="punto_di_interesse">Riferimento al punto di interesse</label>
+<!--                 <label for="punto_di_interesse">Riferimento al punto di interesse</label>
                 <input
                 type="text"
                 class="form-control"
                 id="punto_di_interesse"
                 [(ngModel)]="beacon.PuntiDiInteresse_idPuntiDiInteresse"
                 name="punto_di_interesse"
-                />
+                /> -->
+
+                <select class="form-select" aria-label="select"  [(ngModel)]="beacon.PuntiDiInteresse_idPuntiDiInteresse">
+                    <option *ngFor="let a of array" value='{{a.idPuntiDiInteresse}}'>
+                      {{ a.NomePunto }}  
+                    </option>  
+                  </select> 
             </div>
 
             <div style="text-align:center">

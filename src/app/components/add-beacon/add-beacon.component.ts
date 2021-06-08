@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Beacon } from 'src/app/models/beacon.model';
 import { BeaconService } from 'src/app/services/beacon.service';
+import { PointService } from 'src/app/services/point.service';
 
 @Component({
   selector: 'app-add-beacon',
@@ -8,7 +9,8 @@ import { BeaconService } from 'src/app/services/beacon.service';
   styleUrls: ['./add-beacon.component.css']
 })
 export class AddBeaconComponent implements OnInit {
-    beacon: Beacon =
+  array=[];
+  beacon: Beacon =
     {
         //idBeacon:'',
         UID:'',
@@ -22,9 +24,20 @@ export class AddBeaconComponent implements OnInit {
 
     submitted=false;
 
-    constructor(private beaconservice:BeaconService) { }
+    constructor(private beaconservice:BeaconService, private ps:PointService) { }
 
     ngOnInit(): void {
+     
+      this.ps.getAll()
+      .subscribe(
+        data => {
+          this.array = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+
   }
 
 

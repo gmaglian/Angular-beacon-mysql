@@ -50,10 +50,16 @@
 
 
     <label class="col-sm-2 col-form-label"> Riferimento punto di interesse beacon</label>
-    <div class="col-sm-10">
+    <!-- <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="currentBeacon.PuntiDiInteresse_idPuntiDiInteresse"
         placeholder="Inserisci il riferimento al punto di interesse del beacon che vuoi modificare">
-    </div>
+    </div> -->
+    <select class="form-select" aria-label="select"  [(ngModel)]="currentBeacon.PuntiDiInteresse_idPuntiDiInteresse">
+        <option *ngFor="let a of array" value='{{a.idPuntiDiInteresse}}'>
+          {{ a.NomePunto }}  
+        </option>  
+      </select> 
+
 
     <button (click)="UpdateBeacon()" class="btn btn-outline-primary">Modifica</button>
     </div>

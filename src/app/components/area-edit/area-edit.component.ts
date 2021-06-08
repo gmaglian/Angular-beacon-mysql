@@ -1,6 +1,7 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { Area } from 'src/app/models/area.model';
 import { AreaService } from 'src/app/services/area.service'
+import { TheaterService } from 'src/app/services/theater.service';  
 
 @Component({
   selector: 'app-area-edit',
@@ -8,6 +9,7 @@ import { AreaService } from 'src/app/services/area.service'
   styleUrls: ['./area-edit.component.css']
 })
 export class AreaEditComponent implements OnInit {
+  array = [];
   currentArea: Area={
     idAree:'',
     NomeArea:'',
@@ -15,7 +17,7 @@ export class AreaEditComponent implements OnInit {
     Teatri_idTeatro:''
 
  };
-  constructor(private service:AreaService) { }
+  constructor(private service:AreaService, private theaterservice:TheaterService) { }
 
   @Input() area:any;
   ngOnInit(): void {
@@ -23,7 +25,18 @@ export class AreaEditComponent implements OnInit {
     this.currentArea.NomeArea=this.area.NomeArea;
     this.currentArea.Descrizione=this.area.Descrizione;
     this.currentArea.Teatri_idTeatro=this.area.Teatri_idTeatro;
-  
+
+    this.theaterservice.getAll()
+    .subscribe(
+      data => {
+        this.array = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
+
+
   }
 
 

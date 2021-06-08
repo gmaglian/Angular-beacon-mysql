@@ -22,14 +22,16 @@
     
 
     <label class="col-sm-2 col-form-label"> Riferimento area</label>
-    <div class="col-sm-10">
+<!--     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="currentPoint.Aree_idAree"
         placeholder="Inserisci il rifereimento all'area del punto di interesse che vuoi modificare">
     </div>
-
-
-
-  
+ -->
+    <select class="form-select" aria-label="select"  [(ngModel)]="currentPoint.Aree_idAree">
+        <option *ngFor="let a of array" value='{{a.idAree}}'>
+            {{ a.NomeArea }}  
+        </option>  
+    </select> 
 
     <button (click)="UpdatePoint()" class="btn btn-outline-primary">Modifica</button>
     </div>

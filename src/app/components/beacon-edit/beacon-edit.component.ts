@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Beacon } from 'src/app/models/beacon.model';
 import { BeaconService } from 'src/app/services/beacon.service';
+import { PointService } from 'src/app/services/point.service';
+
 @Component({
   selector: 'app-beacon-edit',
   templateUrl: './beacon-edit.component.html',
@@ -9,7 +11,7 @@ import { BeaconService } from 'src/app/services/beacon.service';
 })
 export class BeaconEditComponent implements OnInit {
 
-
+  array=[];
   currentBeacon: Beacon={
      idBeacon:'',
      UID:'',
@@ -21,7 +23,7 @@ export class BeaconEditComponent implements OnInit {
      PuntiDiInteresse_idPuntiDiInteresse:''
   };
   
-  constructor(private service:BeaconService) { }
+  constructor(private service:BeaconService, private ps:PointService) { }
   
 
   @Input() beacon:any;
@@ -38,6 +40,15 @@ export class BeaconEditComponent implements OnInit {
     this.currentBeacon.DataAssegnazione=this.beacon.DataAssegnazione;
     this.currentBeacon.PuntiDiInteresse_idPuntiDiInteresse=this.beacon.PuntiDiInteresse_idPuntiDiInteresse;
 
+    this.ps.getAll()
+    .subscribe(
+      data => {
+        this.array = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 

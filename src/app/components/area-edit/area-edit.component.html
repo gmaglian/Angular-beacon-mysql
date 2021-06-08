@@ -19,16 +19,19 @@
         <input type="text" class="form-control" [(ngModel)]="currentArea.Descrizione"
         placeholder="Inserisci la descrizione dell' area che vuoi modificare" maxlength="200">
     </div>
-    
+
 
     <label class="col-sm-2 col-form-label"> Riferimento al teatro</label>
-    <div class="col-sm-10">
+<!--     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="currentArea.Teatri_idTeatro"
         placeholder="Inserisci il riferimento al teatro dell'area che vuoi modificare">
-    </div>
-
-
-   
+    </div> -->
+    <select class="form-select" aria-label="select"  [(ngModel)]="currentArea.Teatri_idTeatro">
+        <option *ngFor="let a of array" value='{{a.idTeatro}}'>
+            {{ a.NomeTeatro }}  
+        </option>  
+    </select> 
+  
     <button (click)="UpdateArea()" class="btn btn-outline-primary">Modifica</button>
     </div>
     

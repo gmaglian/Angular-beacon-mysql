@@ -26,7 +26,7 @@
             />
             </div>
 
-            <div class="form-group">
+<!--             <div class="form-group">
                 <label for="teatri">Riferimento al teatro</label>
                 <input
                 type="text"
@@ -36,9 +36,14 @@
                 [(ngModel)]="area.Teatri_idTeatro"
                 name="teatri"
                 #teatri_ref/>
-            </div>
+            </div> -->
 
         
+            <select class="form-select" aria-label="select"  [(ngModel)]="area.Teatri_idTeatro" #teatri_ref>
+                <option *ngFor="let a of array" value='{{a.idTeatro}}' >
+                  {{ a.NomeTeatro }}  
+                </option>  
+              </select> 
 
 
             <div style="text-align:center">
