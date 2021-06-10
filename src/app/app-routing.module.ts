@@ -12,6 +12,7 @@ import { AddAreaComponent } from './components/add-area/add-area.component'
 import { PointsListComponent } from './components/points-list/points-list.component'
 import { AddPointComponent } from './components/add-point/add-point.component'
 import { ContextListComponent } from './components/context-list/context-list.component'
+import { GestureListComponent } from './components/gestures-list/gestures-list.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'beacon', pathMatch: 'full' },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'add_area', component: AddAreaComponent },
   { path: 'point', component:PointsListComponent },
   { path: 'add_point', component:AddPointComponent},
-  {path: 'context', component:ContextListComponent}
+  {path: 'context', component:ContextListComponent},
+  {path: 'gesture', component:GestureListComponent}
 
 ];
 

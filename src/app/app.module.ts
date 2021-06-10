@@ -24,6 +24,8 @@ import { ContextListComponent } from './components/context-list/context-list.com
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GestureListComponent } from './components/gestures-list/gestures-list.component';
+import { GestureEditComponent } from './components/gesture-edit/gesture-edit.component';
 
 
 
@@ -45,7 +47,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddPointComponent,
     PointsListComponent,
     PointEditComponent,
-    ContextListComponent
+    ContextListComponent,
+    GestureListComponent,
+    GestureEditComponent
   ],
   imports: [
     BrowserModule,

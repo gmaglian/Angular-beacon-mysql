@@ -1,0 +1,71 @@
+
+<div class="list row">    
+    <div class="col-md-12">
+      <h4>Riepilogo gesture</h4>
+       
+      
+      <table class="table table-sm">
+        <tr>
+          <th style="width: 5%">Id</th>
+          <th style="width: 15%">Infoscena</th>
+          <th style="width: 15%">Infoattore</th>
+          <th style="width: 15%">Sottotitoli Italiano</th>
+          <th style="width: 15%">Sottotitoli Inglese</th>
+          <th style="width: 15%">Posizione</th>
+          <th style="width: 15%">Dimensione carattere</th>
+          <th colspan="2">Azioni</th> 
+        </tr>
+        <tr *ngFor="let gesture of gestures; let i = index">
+          <td>
+            {{ gesture.id }} 
+          </td>
+          <td> 
+            {{ gesture.infoscena }}
+          </td>
+          <td> 
+            {{ gesture.infoattore }}
+          </td>
+          <td> 
+            {{ gesture.sottotitoliit }}
+          </td>
+          <td> 
+            {{ gesture.sottotitolien }}
+          </td>
+          <td> 
+            {{ gesture.posizione }}
+          </td>
+          <td> 
+            {{ gesture.dimcarattere }}
+          </td>
+          <td> 
+            
+            <button type="button" class="btn btn-outline-primary"(click)="edit(gesture)">Modifica</button>
+          </td>
+          <td> 
+            
+            <button type="button" class="btn btn-outline-danger" (click)="deletebyId(gesture)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+          
+    
+<!--       <button class="m-3 btn btn-sm btn-danger" (click)="removeAllGestures()">
+        Rimuovi tutti!
+      </button> -->
+    </div>
+  
+  
+   <div class="modal-body">
+        <app-gesture-edit  [gesture]="gesture" *ngIf="activateEditGesture">
+     
+        </app-gesture-edit> 
+  
+        
+      </div> 
+  
+   <button  class="btn btn-outline-success" *ngIf="activateEditGesture" (click)=close()>Aggiorna</button>
+  
+  </div>
+  
