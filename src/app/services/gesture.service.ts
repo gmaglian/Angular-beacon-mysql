@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Gesture } from '../models/gesture.model';
 
 
-//const baseUrl = 'http://localhost:8090/api/gesture';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/gesture';
+const baseUrl = 'http://localhost:8090/api/gesture';
+//const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/gesture';
 
 @Injectable({
   providedIn: 'root'

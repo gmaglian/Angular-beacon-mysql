@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Point } from '../models/point.model';
 
 
-//const baseUrl = 'http://localhost:8090/api/puntidiinteresse';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/puntidiinteresse';
+const baseUrl = 'http://localhost:8090/api/puntidiinteresse';
+//const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/puntidiinteresse';
 
 @Injectable({
   providedIn: 'root'

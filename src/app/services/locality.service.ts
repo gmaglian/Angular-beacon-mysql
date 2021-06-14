@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Locality } from '../models/locality.model';
 
 
-//const baseUrl = 'http://localhost:8090/api/localita';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/localita';
+const baseUrl = 'http://localhost:8090/api/localita';
+//const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/localita';
 
 
 @Injectable({

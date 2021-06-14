@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Theater } from '../models/theater.model';
 
-//const baseUrl = 'http://localhost:8090/api/teatri';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/teatri';
+const baseUrl = 'http://localhost:8090/api/teatri';
+//const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/teatri';
 
 @Injectable({
   providedIn: 'root'
