@@ -29,6 +29,7 @@ import { GestureEditComponent } from './components/gesture-edit/gesture-edit.com
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { GestureEditComponent } from './components/gesture-edit/gesture-edit.com
     PointEditComponent,
     ContextListComponent,
     GestureListComponent,
-    GestureEditComponent
+    GestureEditComponent,
   ],
   imports: [
     BrowserModule,

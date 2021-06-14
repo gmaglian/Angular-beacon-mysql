@@ -2,38 +2,52 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Area } from '../models/area.model';
+import{ GlobalConstants } from '../common/global-constants';
 
-
-//const baseUrl = 'http://localhost:8090/api/aree';
-const baseUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/aree';
+const localUrl = 'http://localhost:8090/api/aree';
+const remoteUrl = 'https://nodejs-mysql-beacon.herokuapp.com/api/aree';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AreaService {
-  constructor(private http: HttpClient) { }
+  localhost = GlobalConstants.local_host;
+  baseUrl:string = "";
+
+  constructor(private http: HttpClient) {
+  
+    if(this.localhost)
+    {
+      this.baseUrl = localUrl;
+      
+    } else {
+      this.baseUrl = remoteUrl;
+    }
+    console.log('Area Url:' + this.baseUrl);
+
+  }
 
   getAll(): Observable<Area[]> {
-    return this.http.get<Area[]>(baseUrl);
+    return this.http.get<Area[]>(this.baseUrl);
   }
 
   get(id: any): Observable<Area> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(this.baseUrl, data);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put(`${this.baseUrl}/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+    return this.http.delete(this.baseUrl);
   }
 }

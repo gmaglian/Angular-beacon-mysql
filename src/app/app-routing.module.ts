@@ -25,9 +25,9 @@ const routes: Routes = [
   { path: 'area', component: AreasListComponent },
   { path: 'add_area', component: AddAreaComponent },
   { path: 'point', component:PointsListComponent },
-  { path: 'add_point', component:AddPointComponent},
-  {path: 'context', component:ContextListComponent},
-  {path: 'gesture', component:GestureListComponent}
+  { path: 'add_point', component:AddPointComponent },
+  { path: 'context', component:ContextListComponent },
+  { path: 'gesture', component:GestureListComponent }
 
 ];
 

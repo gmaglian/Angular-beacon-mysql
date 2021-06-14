@@ -23,7 +23,7 @@ export class ContextService {
     } else {
       this.baseUrl = remoteUrl;
     }
-    console.log('Context Url:' + this.baseUrl);
+    console.log('Url:' + this.baseUrl);
 
   }
 
