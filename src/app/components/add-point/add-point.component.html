@@ -26,9 +26,9 @@
             />
             </div>
 
-<!--             <div class="form-group">
-                <label for="aree">Riferimento area</label>
-                <input
+            <div class="form-group">
+              <label for="aree">Riferimento area</label>
+<!--                 <input
                 type="text"
                 class="form-control"
                 id="aree"
@@ -36,14 +36,13 @@
                 [(ngModel)]="point.Aree_idAree"
                 name="aree"
                 #aree_ref/>
-            </div> -->
-
-            <select class="form-select" aria-label="select"  [(ngModel)]="point.Aree_idAree" #aree_ref>
+ -->
+              <select class="form-select" aria-label="select"  [(ngModel)]="point.Aree_idAree" #aree_ref>
                 <option *ngFor="let a of array" value='{{a.idAree}}' >
                   {{ a.NomeArea }}  
                 </option>  
               </select> 
-           
+            </div>           
 
             <div style="text-align:center">
                 <button (click)="savePoint(nome_ref.value,aree_ref.value)">

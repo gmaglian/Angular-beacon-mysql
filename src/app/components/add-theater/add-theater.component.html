@@ -26,9 +26,9 @@
             />
             </div>
 
-<!--             <div class="form-group">
-                <label for="localita_idlocalita">Riferimento alla località</label>
-                <input
+            <div class="form-group">
+              <label for="localita_idlocalita">Riferimento alla località</label>
+<!--                 <input
                 type="text"
                 class="form-control"
                 id="localita_idlocalita"
@@ -36,13 +36,14 @@
                 [(ngModel)]="theater.Localita_idLocalita"
                 name="localita_idlocalita"
                 #localita_idlocalita_ref/>
-            </div>  -->            
-            <select class="form-select" aria-label="select"  [(ngModel)]="theater.Localita_idLocalita" #localita_idlocalita_ref>
+  -->            
+              <select class="form-select" aria-label="select"  [(ngModel)]="theater.Localita_idLocalita" #localita_idlocalita_ref>
                 <option *ngFor="let a of array" value='{{a.idLocalita}}' >
                   {{ a.NomeLocalita }}  
                 </option>  
               </select> 
-
+            </div>
+            
             <div style="text-align:center">
                 <button (click)="saveTheater( nome_teatro_ref.value,localita_idlocalita_ref.value)">
             <i class="fas fa-edit"></i> Aggiungi teatro
