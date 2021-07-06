@@ -13,6 +13,8 @@ import { PointsListComponent } from './components/points-list/points-list.compon
 import { AddPointComponent } from './components/add-point/add-point.component'
 import { ContextListComponent } from './components/context-list/context-list.component'
 import { GestureListComponent } from './components/gestures-list/gestures-list.component'
+import { UserDeviceIdListComponent } from './components/userdeviceid-list/userdeviceid-list.component'
+import { AddUserDeviceIdComponent } from './components/add-userdeviceid/add-userdeviceid.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'beacon', pathMatch: 'full' },
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: 'point', component:PointsListComponent },
   { path: 'add_point', component:AddPointComponent },
   { path: 'context', component:ContextListComponent },
-  { path: 'gesture', component:GestureListComponent }
+  { path: 'gesture', component:GestureListComponent },
+  { path: 'userdeviceid', component:UserDeviceIdListComponent},
+  { path: 'adduserdeviceid', component:AddUserDeviceIdComponent}
 
 ];
 

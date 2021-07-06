@@ -1,3 +1,7 @@
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+}
 .dropdown-menu > a:nth-of-type(1):hover {
     background-color:aqua;
     background-image: none;

@@ -1,0 +1,58 @@
+<div class="list row">    
+    <div class="table-responsive-md">
+      <h4>Riepilogo Device Utenti</h4>
+       
+      
+      <table class="table">
+        <tr>
+          <th style="width: 10%">Id</th>
+          <th style="width: 10%">User Id</th>
+          <th style="width: 10%">HololensId</th>
+          <th style="width: 10%">GestureId</th>
+          <th style="width: 10%">Data Consegna</th>
+          <th style="width: 10%">Data Ritiro</th>
+          <th colspan="2">Azioni</th> 
+        </tr>
+        <tr *ngFor="let userdeviceid of userdeviceids; let i = index">
+          <td>
+            {{ userdeviceid.id }} 
+          </td>
+          <td> 
+            {{ userdeviceid.userid }}
+          </td>
+          <td> 
+            {{ userdeviceid.hololensid }}
+          </td>
+          <td> 
+            {{ userdeviceid.gestureid}}
+          </td>
+          <td> 
+            {{ userdeviceid.data_consegna }}
+          </td>
+          <td> 
+            {{ userdeviceid.data_ritiro}}
+          </td>
+         
+          <td> 
+            
+            <button type="button" class="btn btn-outline-primary"(click)="edit(userdeviceid)">Modifica</button>
+          </td>
+          <td> 
+            
+            <button type="button" class="btn btn-outline-danger" (click)="deletebyId(userdeviceid)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+          
+    
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllUserDeviceId()">
+        Rimuovi tutti!
+      </button>
+    </div>
+   
+  
+  
+  </div>
+  

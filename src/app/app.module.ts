@@ -20,14 +20,13 @@ import { AddPointComponent } from './components/add-point/add-point.component';
 import { PointsListComponent } from './components/points-list/points-list.component';
 import { PointEditComponent } from './components/point-edit/point-edit.component';
 import { ContextListComponent } from './components/context-list/context-list.component';
-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GestureListComponent } from './components/gestures-list/gestures-list.component';
 import { GestureEditComponent } from './components/gesture-edit/gesture-edit.component';
-
-
+import { UserDeviceIdListComponent } from './components/userdeviceid-list/userdeviceid-list.component';
+import { AddUserDeviceIdComponent } from './components/add-userdeviceid/add-userdeviceid.component';
 
 
 @NgModule({
@@ -51,6 +50,8 @@ import { GestureEditComponent } from './components/gesture-edit/gesture-edit.com
     ContextListComponent,
     GestureListComponent,
     GestureEditComponent,
+    UserDeviceIdListComponent,
+    AddUserDeviceIdComponent
   ],
   imports: [
     BrowserModule,
